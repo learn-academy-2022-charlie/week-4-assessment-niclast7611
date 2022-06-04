@@ -1,7 +1,7 @@
 // ASSESSMENT 4: JavaScript Coding Practical Questions with Jest
 
-const { isTypedArray } = require("util/types")
-const { describe } = require("yargs")
+// const { isTypedArray } = require("util/types")
+// const { describe } = require("yargs")
 
 // Please read all questions thoroughly
 // Pseudo coding is REQUIRED
@@ -129,6 +129,9 @@ describe('noRepeats', () => {
             //It is saving all the numbers in that set
         //But since its an object not an array we need to convert the object back to an array thats why I use Array.from 
             //Array.from allows me to create arrays from array like objects.
+            // Set {3, 7, 10, 5, 4, 8, 2, 1}
+            //This is what it looks like before we use Array.from
+
         //So I am converting the Set object into an array and returning emptyArr which is what I assigned all that logic too. 
 
 //Even though I had to use outside resources to solve this hopefully the lines above show that I understand the methods I used in order to get the returned result. 
@@ -136,11 +139,10 @@ describe('noRepeats', () => {
 
 const noRepeats = (arr1, arr2) => {
     let fullArr = arr1.concat(arr2)
-    let emptyArr = Array.from(new Set(fullArr))
+    let emptyArr =  Array.from(new Set(fullArr))
     return emptyArr
-
-    
 }
+    
 
 // I GOT GREEN
 // PASS  ./code-challenges.test.js
