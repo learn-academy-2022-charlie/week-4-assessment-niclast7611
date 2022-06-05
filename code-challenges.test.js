@@ -23,14 +23,31 @@ const colors1 = ["purple", "blue", "green", "yellow", "pink"]
 const colors2 = ["chartreuse", "indigo", "periwinkle", "ochre", "aquamarine", "saffron"]
 // Expected output example (can be a different order): ["saffron", "aquamarine", "periwinkle", "indigo", "ochre"]
 
-describe('shuffledWords', () => {
-    it('removes the first item from the array and shuffles the remaining content.', () => {
-        expect(shuffledWords()).toEqual(expect.arrayContaining(array))
-    })
-})
 
+//If I am being 100% honest I could not figure out how this test worked even with reading the website provided. I don't know if I was over complicating it or just could not understand the syntax of it. I would really appreciate if when you go over the assessment go over this test please. 
 
 // b) Create the function that makes the test pass.
+
+//I would great a function that takes in an array of strings
+    //I created a function named shuffled that takes in an array as an argument 
+//I would then use .slice(1) which would cut the array at index of run removing the first index of 0 and save that to a variable named arrayMinusOne
+//i would then use .sort() to create a random number that would change the indexs of each item in the array. 
+    // I used .sort and math.random which created a number between 0 and .999 and minused .5 from that so dpeending on the number (a negative or positive) the index would be moved forwards or backwards.and i saved that to a variable called shuffleArr
+    // i would return that shuffleArr
+
+const shuffled = (array) => {
+    let arrayMinusOne = array.slice(1)
+    let shuffleArr = arrayMinusOne.sort(() => Math.random() - 0.5)
+    return shuffleArr
+
+}
+
+// Output in console - 
+// colors1 ['yellow', 'green', 'pink', 'blue']
+// colors1 ['blue', 'yellow', 'pink', 'green']
+
+// colors2 ['ochre', 'periwinkle', 'aquamarine', 'indigo', 'saffron']
+// colors2 ['saffron', 'aquamarine', 'ochre', 'periwinkle', 'indigo']
 
 
 // --------------------2) Create a function that takes an array of numbers and returns an array of the minimum and maximum numbers in that order.
