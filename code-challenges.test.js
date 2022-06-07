@@ -18,13 +18,35 @@
 
 // a) Create a test with an expect statement using the variable provided. HINT: Check out this resource: https://jestjs.io/docs/expect#expectarraycontainingarray
 
-const colors1 = ["purple", "blue", "green", "yellow", "pink"]
-// Expected output example (can be a different order): ["yellow", "blue", "pink", "green"]
-const colors2 = ["chartreuse", "indigo", "periwinkle", "ochre", "aquamarine", "saffron"]
-// Expected output example (can be a different order): ["saffron", "aquamarine", "periwinkle", "indigo", "ochre"]
+
+describe("shuffled", ()=>{
+    it("takes in an array, removes the first item from the array and shuffles the remaining content.", ()=>{
+
+        const colors1 = ["purple", "blue", "green", "yellow", "pink"]
+        // Expected output example (can be a different order): ["yellow", "blue", "pink", "green"]
+        const colors2 = ["chartreuse", "indigo", "periwinkle", "ochre", "aquamarine", "saffron"]
+        // Expected output example (can be a different order): ["saffron", "aquamarine", "periwinkle", "indigo", "ochre"]
+
+      expect(shuffled(colors1)).toEqual(expect.arrayContaining(["yellow", "blue", "pink", "green"]))
+      expect(shuffled(colors2)).toEqual(expect.arrayContaining(["saffron", "aquamarine", "periwinkle", "indigo", "ochre"]))
+    
+   })
+  })
+
+//   I GOT RED
+//   FAIL  ./code-challenges.test.js
+//   shuffled
+//     ✕ takes in an array, removes the first item from the array and shuffles the remaining content. (9 ms)
+//   minAndMax
+//     ✓ returns an array of the minimum and maximum numbers in that order. (8 ms)
+//   noRepeats
+//     ✓ returns one array with no duplicate values (1 ms)
+
+//   ● shuffled › takes in an array, removes the first item from the array and shuffles the remaining content.
+
+//     ReferenceError: shuffled is not defined
 
 
-//If I am being 100% honest I could not figure out how this test worked even with reading the website provided. I don't know if I was over complicating it or just could not understand the syntax of it. I would really appreciate if when you go over the assessment go over this test please. 
 
 // b) Create the function that makes the test pass.
 
@@ -48,6 +70,15 @@ const shuffled = (array) => {
 
 // colors2 ['ochre', 'periwinkle', 'aquamarine', 'indigo', 'saffron']
 // colors2 ['saffron', 'aquamarine', 'ochre', 'periwinkle', 'indigo']
+
+// I GOT GREEN
+// PASS  ./code-challenges.test.js
+// shuffled
+//   ✓ takes in an array, removes the first item from the array and shuffles the remaining content. (10 ms)
+// minAndMax
+//   ✓ returns an array of the minimum and maximum numbers in that order. (7 ms)
+// noRepeats
+//   ✓ returns one array with no duplicate values (3 ms)
 
 
 // --------------------2) Create a function that takes an array of numbers and returns an array of the minimum and maximum numbers in that order.
